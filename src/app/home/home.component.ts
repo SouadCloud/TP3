@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 
 
@@ -13,17 +15,19 @@ export class HomeComponent implements OnInit {
   btnText: string = 'Add an item';
   goalText: string = 'My first life goal';
   goals = [];
-  constructor() { }
+  constructor() {}
+    
 
   ngOnInit() {
     this.addItem();
+    this.itemCount = this.goals.length;
    
   }
  addItem(){
   this.goals.push(this.goalText);
   this.goalText = '';
   this.itemCount = this.goals.length;
-  
+
   }
 
 }
